@@ -1,0 +1,38 @@
+<!-- connect html with logic.js -->
+<html>
+    <head>
+        <script src="logic.js"></script>
+    </head>
+    <body onload="init()">
+        <div id="header">
+            <h1>Hostel Mess Cut Management Software</h1>
+        </div>
+        <!-- create a name input box -->
+        <div id="name">
+            <label for="name">Name:</label>
+            <input type="text" id="nameInput" name="name">
+        </div>
+        <!-- create a start date picker and end date picker -->
+        <div id="dates">
+            <label for="start">Start Date:</label>
+            <input type="date" id="startDate" name="start">
+            <label for="end">End Date:</label>
+            <input type="date" id="endDate" name="end">
+        </div>
+        <!-- create a submit button -->
+        <div id="submit">
+            <input type="button" id="submitButton" value="Submit" onclick="submit()">
+        </div>
+        <!-- create a list of names of mess_cut_students -->
+        <br>
+        <div id="list">
+            <label for="list">List of Mess Cut Students:</label>
+            <br>
+            <input type="button" id="previousDate" value="Previous" onclick="getPrevDateList()">
+            <input type="date" id="listDate" onchange="getSelectedDateList()">
+            <input type="button" id="nextDate" value="Next" onclick="getNextDateList()">            
+            <ul id="listOfNames">
+            </ul>
+        </div>
+    </body>
+</html>
