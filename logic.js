@@ -27,8 +27,8 @@ function init (){
 }
 
 function submit() {
-    var name = document.getElementById("nameInput").value;
-    if(name == "")
+    var name = document.getElementById("nameLabel").innerHTML;
+    if(name == "Invalid College ID")
         return;
     var startDate = document.getElementById("startDate").value;
     var endDate = document.getElementById("endDate").value;
@@ -46,7 +46,7 @@ function submit() {
 
 function clear() {
     // clear all the fields
-    document.getElementById("nameInput").value = "";
+    document.getElementById("idInput").value = "";
     var todayDate = new DateZero();
     // set value of nextDate as the day after today;
     var nextDate = new Date(todayDate.getTime() + 1000*60*60*24);
@@ -108,6 +108,11 @@ function getPrevDateList(){
 
 }
 
+function getStartDate(){
+    var today = corrected_date(new DateZero());
+    var startDate = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+    return startDate;
+}
 
 function getJSONArray(json) {
     // retrieve ListElement array from JSON file

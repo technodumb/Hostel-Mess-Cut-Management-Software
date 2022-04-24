@@ -2,6 +2,7 @@
 <html>
     <head>
         <script src="logic.js"></script>
+        <script src="studentlist.js"></script>
     </head>
     <body onload="init()">
         <div id="header">
@@ -9,13 +10,14 @@
         </div>
         <!-- create a name input box -->
         <div id="name">
-            <label for="name">Name:</label>
-            <input type="text" id="nameInput" name="name">
+            <label for="id">College ID:</label>
+            <input type="text" id="idInput" name="id" onchange="displayName()">
+            <label for="name" id="nameLabel"></label>
         </div>
         <!-- create a start date picker and end date picker -->
         <div id="dates">
             <label for="start">Start Date:</label>
-            <input type="date" id="startDate" name="start">
+            <input type="date" id="startDate" name="start" start=getStartDate()>
             <label for="end">End Date:</label>
             <input type="date" id="endDate" name="end">
         </div>
